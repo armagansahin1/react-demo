@@ -1,19 +1,24 @@
 import {Col, Container, Row} from "react-bootstrap";
-
+import "./navbar.css"
 function Navbar() {
     return (
-        <nav className="container"  style={{background:"#222831",color:"#EEEEEE",height:"80px"}}>
-            <li style={{margin:0,padding:0,textDecoration:"none"}}>
-                <ul>
-                    Linkedin
-                </ul>
-                <ul>
-                    Instagram
-                </ul>
-                <ul>
-                    Twitter
-                </ul>
-            </li>
+        <nav className="container p-2 navbar ">
+            <div className="row col-12 d-flex justify-content-between">
+                <div className="col-4">
+                    Armağan Şahin
+                </div>
+                <div className="col-6 row d-flex justify-content-end">
+                    <div className="col-4 text-end">
+                        Linkedin
+                    </div>
+                    <div className="col-4 text-end">
+                        Linkedin
+                    </div>
+                    <div className="col-4 text-end">
+                        Linkedin
+                    </div>
+                </div>
+            </div>
         </nav>
     )
 }

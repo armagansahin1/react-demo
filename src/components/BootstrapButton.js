@@ -1,8 +1,8 @@
 import Button from 'react-bootstrap/Button';
-function BootstrapButton({buttonText,variant="primary"}){
+function BootstrapButton({buttonText,variant="primary",onClick}){
     return (
         <div>
-            <Button variant={variant}>{buttonText}</Button>
+            <Button onClick={onClick} variant={variant}>{buttonText}</Button>
         </div>
     )
 }

@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState} from "react";
+import Login from "./login-page/Login";
+import FullPageLayout from "./pages/FullPageLayout";
+import { Route, Routes} from "react-router-dom";
+import Home from "./pages/full-pages/Home";
+import Detail from "./pages/full-pages/Detail";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    const [counter, setCounter] = useState(0);
+
+    const [isLogged, setIsLogged] = useState(false);
+
+    return (
+
+        <>
+            <Routes>
+                <Route path="/" element={<Login/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/fullPages" element={<FullPageLayout/>}>
+                    <Route index={true}  element={<Home/>}/>
+                    <Route  path="home" element={<Home/>}/>
+                    <Route path="detail" element={<Detail/>}/>
+                </Route>
+            </Routes>
+
+
+        </>
+
+
   );
 }
 
